@@ -7,18 +7,6 @@ const todoList = () => {
       all[index].completed = true
     }
     
-    // const iscompleted = (list) =>{
-    //   return l;
-    // }
-
-    const istoday = (list) => {
-      return list["dueDate"] == today;
-    }
-
-    const alloteddate = (list) => {
-      let res = list.dueDate == yesterday? yesterday : tomorrow;
-      return res;
-    }
     const overdue = () => {
       let due3 = all.filter((item)=> item.dueDate ==yesterday);
       return due3 
@@ -39,7 +27,7 @@ const todoList = () => {
       for (index=0 ; index<list.length; index++)
       {
          box = list[index].completed == true ? "[x]" : "[ ]";
-         adddate = list[index].dueDate == tomorrow? "" : list[index].dueDate;
+         adddate = list[index].dueDate == today? "" : list[index].dueDate;
          ans.push(`${box} ${list[index].title} ${adddate}`);
       }
         let res =  ans.join("\n");
