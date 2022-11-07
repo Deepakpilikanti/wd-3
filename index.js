@@ -39,7 +39,7 @@ const todoList = () => {
       for (index=0 ; index<list.length; index++)
       {
          box = list[index].completed == true ? "[x]" : "[ ]";
-         adddate = list[index].dueDate == "2022-09-21"? "" : list[index].dueDate;
+         adddate = list[index].dueDate == tomorrow? "" : list[index].dueDate;
          ans.push(`${box} ${list[index].title} ${adddate}`);
       }
         let res =  ans.join("\n");
